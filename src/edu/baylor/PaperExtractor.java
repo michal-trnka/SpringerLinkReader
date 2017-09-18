@@ -31,11 +31,10 @@ public class PaperExtractor {
         return articles;
     }
 
-    public List<Article> addAbstractsToArticles(List<Article> articles) throws IOException {
+    public void addAbstractsToArticles(List<Article> articles) throws IOException {
         for (Article a : articles) {
             addAbstractToArticle(a);
         }
-        return articles;
     }
 
     private void addAbstractToArticle(Article article) throws IOException {
