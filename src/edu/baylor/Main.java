@@ -1,5 +1,6 @@
 package edu.baylor;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -9,6 +10,8 @@ public class Main {
             PaperExtractor paperExtractor = new PaperExtractor();
             List<Article> articles = paperExtractor.getArticlesFromCSV("C:\\Users\\trnka\\Documents\\Survey\\SpringerLink-raw.csv");
             paperExtractor.addAbstractsToArticles(articles);
+            List<Article> filtered = paperExtractor.filterAbstract(articles, Arrays.asList("Authentication","Authorization","Identity"),Arrays.asList("Protocol ","RFID"));
+            paperExtractor.writeArticles(filtered,"C:\\Users\\trnka\\Documents\\Survey\\SpringerLink-processed.csv");
 
 
         } catch (Exception e) { //Pokemon exception handling
