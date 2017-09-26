@@ -89,5 +89,3 @@ boolean checkLines(String[] lines, int start, int amount) {
     }
     return false
 }
-
-
